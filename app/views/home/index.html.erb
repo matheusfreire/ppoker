@@ -1,0 +1,10 @@
+<h1>Planning poker</h1>
+<p>Se você quiser saber mais sobre este meio de priorização, visite:</p>
+<li><a href="http://bit.ly/wiki-planning-poker">Wiki</a></li>
+
+
+<%= link_to "Novo usuário", new_user_registration_path %>
+<%= link_to "Entrar", new_user_session_path %>
+<% if user_signed_in? %>
+    <%= link_to "Nova história de usuário", new_user_story_path %>
+<% end %>
