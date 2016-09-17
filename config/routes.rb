@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  resources :user_stories
+
   devise_for :users
   root to: 'home#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+  resources :user_stories
+  resources :pokers
 
 
 end

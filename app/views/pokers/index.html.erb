@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pokers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pokers.each do |poker| %>
+      <tr>
+        <td><%= link_to 'Show', poker %></td>
+        <td><%= link_to 'Edit', edit_poker_path(poker) %></td>
+        <td><%= link_to 'Destroy', poker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Poker', new_poker_path %>

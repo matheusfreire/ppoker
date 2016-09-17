@@ -1,0 +1,17 @@
+<%= form_for(poker) do |f| %>
+  <% if poker.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(poker.errors.count, "error") %> prohibited this poker from being saved:</h2>
+
+      <ul>
+      <% poker.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
