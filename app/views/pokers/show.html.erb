@@ -1,4 +1,8 @@
 <p id="notice"><%= notice %></p>
+<p>
+  <strong>Nota:</strong>
+  <%= get_note(@poker.note) %>
+</p>
 
 <%= link_to 'Edit', edit_poker_path(@poker) %> |
 <%= link_to 'Back', pokers_path %>

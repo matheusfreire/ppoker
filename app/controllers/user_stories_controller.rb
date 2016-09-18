@@ -16,6 +16,7 @@ class UserStoriesController < ApplicationController
   # GET /user_stories/new
   def new
     @user_story = UserStory.new
+    authorize @user_story
   end
 
   # GET /user_stories/1/edit
