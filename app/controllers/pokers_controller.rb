@@ -5,7 +5,7 @@ class PokersController < ApplicationController
   # GET /pokers
   # GET /pokers.json
   def index
-    @pokers = Poker.all
+    @pokers = Poker.where(user_id: current_user.id)
   end
 
   # GET /pokers/1
@@ -22,11 +22,21 @@ class PokersController < ApplicationController
   def edit
   end
 
+  # GET /pokers/new/:id_userstory
+  def newpoker
+    @poker = Poker.new
+    if params[:id_us].present?
+      @us = UserStory.find(params[:id_us])
+    else
+      redirect_to user_stories_path, notice: 'User story não encontrada'
+    end
+  end
+
   # POST /pokers
   # POST /pokers.json
   def create
     @poker = Poker.new(poker_params)
-
+    @poker.user = current_user
     respond_to do |format|
       if @poker.save
         format.html { redirect_to @poker, notice: 'Poker was successfully created.' }
@@ -60,6 +70,6 @@ class PokersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def poker_params
-      params.fetch(:poker, {})
+      params.require(:poker).permit(:user_story_id, :note)
     end
 end

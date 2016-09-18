@@ -16,6 +16,7 @@
         <td><%= user_story.name %></td>
         <td><%= link_to 'Show', user_story %></td>
         <td><%= link_to 'Edit', edit_user_story_path(user_story) %></td>
+        <td><%= link_to 'Votar', newpoker_pokers_path(user_story) %></td>
         <td><%= link_to 'Destroy', user_story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -25,3 +26,5 @@
 <br>
 
 <%= link_to 'New User Story', new_user_story_path %>
+<%= link_to 'Home', root_path %>
+<%= link_to 'Minhas votações', pokers_path %>

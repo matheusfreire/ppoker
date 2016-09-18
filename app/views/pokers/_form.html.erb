@@ -11,6 +11,18 @@
     </div>
   <% end %>
 
+  <input type="hidden" name="poker[user_story_id]" id="poker_user_story_id" value="<%= @us.id %>" >
+
+  <div class="field">
+    <span>Descrição da história de usuário</span>
+    <%= @us.name %>
+  </div>
+
+  <div class="field">
+    <label>Sua nota</label>
+    <%= f.select :note,Dominio::FiboSequencia::DOMINIOS.map {|p| [ p[:value], p[:key] ]}%>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
