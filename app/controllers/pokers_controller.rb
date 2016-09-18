@@ -20,6 +20,7 @@ class PokersController < ApplicationController
 
   # GET /pokers/1/edit
   def edit
+    @us = UserStory.find(@poker.user_story_id)
   end
 
   # GET /pokers/new/:id_userstory

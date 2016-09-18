@@ -4,6 +4,7 @@
 
 <table>
   <thead>
+    <th>Nota</th>
     <tr>
       <th colspan="3"></th>
     </tr>
@@ -12,6 +13,7 @@
   <tbody>
     <% @pokers.each do |poker| %>
       <tr>
+        <td><%= get_note(poker.note) %></td>
         <td><%= link_to 'Show', poker %></td>
         <td><%= link_to 'Edit', edit_poker_path(poker) %></td>
         <td><%= link_to 'Destroy', poker, method: :delete, data: { confirm: 'Are you sure?' } %></td>

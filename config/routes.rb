@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :user_stories
-  resource :pokers do
-    get 'new/:id_us', to: 'pokers#newpoker', as: 'newpoker'
+  resources :pokers do
+    collection do
+      get 'new/:id_us', to: 'pokers#newpoker', as: 'newpoker'
+    end
   end
-
 
 end
