@@ -79,7 +79,8 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: planningpoker_production
-  username: planningpoker
-  password: <%= ENV['PLANNINGPOKER_DATABASE_PASSWORD'] %>
+  adapter: postgres
+  host: ec2-174-129-242-241.compute-1.amazonaws.com
+  database: d2u39fk8ors7vo
+  username: kvkidreykfaeka
+  password: d2u39fk8ors7vo
