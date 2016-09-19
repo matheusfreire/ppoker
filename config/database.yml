@@ -23,7 +23,11 @@ default: &default
 
 development:
   <<: *default
-  database: planningpoker_development
+  host: ec2-174-129-242-241.compute-1.amazonaws.com
+  port: 5432
+  database: d2u39fk8ors7vo
+  username: kvkidreykfaeka
+  password: eLEx8noCqgId6BbhuGOAuSOGuo
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -79,7 +83,7 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  adapter: postgres
+  <<: *default
   host: ec2-174-129-242-241.compute-1.amazonaws.com
   port: 5432
   database: d2u39fk8ors7vo
