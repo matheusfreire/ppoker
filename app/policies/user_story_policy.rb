@@ -1,11 +1,11 @@
 class UserStoryPolicy < ApplicationPolicy
 
   def edit?
-    is_scrum_master?
+    is_product_owner?
   end
 
   def new?
-    is_scrum_master?
+    is_product_owner?
   end
 
   def update?
@@ -13,7 +13,7 @@ class UserStoryPolicy < ApplicationPolicy
   end
 
   def destroy?
-    is_scrum_master? && @record.user_id == @user.id
+    is_product_owner? && @record.user_id == @user.id
   end
 
 end
