@@ -5,6 +5,7 @@
 <table>
   <thead>
     <th>Nota</th>
+    <th>Quem votou</th>
     <tr>
       <th colspan="3"></th>
     </tr>
@@ -14,8 +15,7 @@
     <% @pokers.each do |poker| %>
       <tr>
         <td><%= get_note(poker.note) %></td>
-        <td><%= link_to 'Show', poker if policy(poker).show? %></td>
-        <td><%= link_to 'Edit', edit_poker_path(poker) if policy(poker).edit? %></td>
+        <td><%= poker.user.name %></td>
         <td><%= link_to 'Destroy', poker, method: :delete, data: { confirm: 'Are you sure?' } if policy(poker).destroy?%></td>
       </tr>
     <% end %>
@@ -23,9 +23,5 @@
 </table>
 
 <br>
-<ul>
-  <li><%= link_to 'Histórias de Usuários', user_stories_path %></li>
-  <% if policy(Poker.new).showall? %>
-    <li><%= link_to 'Mostrar todas as avaliações', showall_pokers_path  %></li>
-  <% end %>
-</ul>
+
+<%= link_to 'Histórias de Usuários', user_stories_path %>

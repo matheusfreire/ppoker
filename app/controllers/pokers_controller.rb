@@ -63,6 +63,12 @@ class PokersController < ApplicationController
     end
   end
 
+
+  def showall
+    authorize Poker.new
+    @pokers = Poker.all
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_poker

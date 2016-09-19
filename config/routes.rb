@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :pokers do
     collection do
       get 'new/:id_us', to: 'pokers#newpoker', as: 'newpoker'
+      get 'showall', to: 'pokers#showall', as: 'showall'
     end
   end
 

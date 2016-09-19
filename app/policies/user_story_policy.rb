@@ -13,7 +13,7 @@ class UserStoryPolicy < ApplicationPolicy
   end
 
   def destroy?
-    edit? && @record.user_id == @user.id
+    is_scrum_master? && @record.user_id == @user.id
   end
 
 end

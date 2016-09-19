@@ -25,6 +25,13 @@
 
 <br>
 
-<%= link_to 'New User Story', new_user_story_path if policy(UserStory.new).new? %>
-<%= link_to 'Home', root_path %>
-<%= link_to 'Minhas votações', pokers_path %>
+<ul>
+  <% if policy(UserStory.new).new?  %>
+      <li><%= link_to 'New User Story', new_user_story_path if policy(UserStory.new).new? %></li>
+  <% end %>
+  <li><%= link_to 'Home', root_path %></li>
+  <li><%= link_to 'Minhas votações', pokers_path %></li>
+  <% if policy(Poker.new).showall? %>
+      <li><%= link_to 'Mostrar todas as avaliações', showall_pokers_path  %></li>
+  <% end %>
+</ul>

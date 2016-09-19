@@ -1,14 +1,14 @@
 class Dominio::FiboSequencia
-  ZERO = 0
+  ZERO = 0.0
   HALF = 0.5
-  ONE = 1
-  TWO = 2
-  THREE = 3
-  FIVE = 5
-  EIGHT = 8
-  THIRTEEN = 13
-  TWENTY = 20
-  FOURTY = 40
+  ONE = 1.0
+  TWO = 2.0
+  THREE = 3.0
+  FIVE = 5.0
+  EIGHT = 8.0
+  THIRTEEN = 13.0
+  TWENTY = 20.0
+  FOURTY = 40.0
 
   DOMINIOS = [
       {key: ZERO, value: "0"},

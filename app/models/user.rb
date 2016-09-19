@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :user_stories
   has_many :pokers
+
+  validates_presence_of :name
 end
