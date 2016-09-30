@@ -1,5 +1,8 @@
 
 # README
+<a href="https://codeclimate.com/github/matheusfreire/ppoker">
+   <img src="https://codeclimate.com/github/matheusfreire/ppoker/badges/gpa.svg" />
+</a>
 
 This application is a challenge for making a rails application to create a planning poker strategy.
 
